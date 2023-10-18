@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Extract List Items</title>
+</head>
+<body>
+    <ul id="items">
+        <li>first item</li>
+        <li>second item</li>
+        <li>third item</li>
+    </ul>
+    <textarea id="result"></textarea>
+    <br>
+    <button onclick="extractText()">Extract Text</button>
+
+    <script>
+        function extractText() {
+            var list = document.getElementById("items");
+            var textArea = document.getElementById("result");
+
+            // Get all the list items
+            var listItems = list.getElementsByTagName("li");
+
+            // Extract and append the text of each list item to the text area
+            for (var i = 0; i < listItems.length; i++) {
+                textArea.value += listItems[i].textContent + "\n";
+            }
+        }
+    </script>
+</body>
+</html>

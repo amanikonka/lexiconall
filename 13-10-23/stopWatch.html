@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Timer</title>
+</head>
+<body>
+    <div id="time" style="border: 3px solid blue; text-align: center; font-size: 2em; margin-bottom: 10px">00:00</div>
+    <button id="startBtn" onclick="startTimer()">Start</button>
+    <button id="stopBtn" disabled="true" onclick="stopTimer()">Stop</button>
+
+    <script>
+        var timer;
+        var isRunning = false;
+        var seconds = 0;
+        var minutes = 0;
+
+        function stopwatch() {
+            var timeDisplay = document.getElementById("time");
+            timeDisplay.textContent = formatTime(minutes, seconds);
+            if (isRunning) {
+                seconds++;
+                if (seconds === 60) {
+                    seconds = 0;
+                    minutes++;
+                }
+                timeDisplay.textContent = formatTime(minutes, seconds);
+            }
+            timer = setTimeout(stopwatch, 1000);
+        }
+
+        function startTimer() {
+            if (!isRunning) {
+                isRunning = true;
+                document.getElementById("startBtn").disabled = true;
+                document.getElementById("stopBtn").disabled = false;
+                seconds = 0;
+                minutes = 0;
+                stopwatch();
+            }
+        }
+
+        function stopTimer() {
+            isRunning = false;
+            document.getElementById("startBtn").disabled = false;
+            document.getElementById("stopBtn").disabled = true;
+            clearTimeout(timer);
+        }
+
+        function formatTime(minutes, seconds) {
+            return (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+        }
+    </script>
+</body>
+</html>

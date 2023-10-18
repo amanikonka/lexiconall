@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Show More Text Example</title>
+</head>
+<body>
+    Welcome to the "Show More Text Example".
+    <a href="#" id="more" onclick="showText()">Read more …</a>
+    <span id="text" style="display: none">Welcome to JavaScript and DOM.</span>
+
+    <script>
+        function showText() {
+            var link = document.getElementById("more");
+            var text = document.getElementById("text");
+
+            // Check if the text is hidden
+            if (text.style.display === "none") {
+                // Display the text and hide the link
+                text.style.display = "inline";
+                link.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

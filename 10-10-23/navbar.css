@@ -1,0 +1,34 @@
+/* Reset margin and padding for the entire page */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #CCCCCC;
+}
+
+/* Style the <nav> container */
+nav {
+    background-color: #444;
+    text-align: center;
+}
+
+/* Style the <ul> for the unordered list */
+ul.navbar {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* Style the <li> for list items with inline-block display */
+ul.navbar li {
+    display: inline-block;
+}
+
+/* Style the <a> for hyperlinks */
+ul.navbar li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 24px;
+    line-height: 40px;
+    height: 40px;
+    padding: 20px;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sum Numbers</title>
+</head>
+<body>
+    <input type="text" id="num1" />
+    +
+    <input type="text" id="num2" />
+    =
+    <input type="text" id="sum" readonly="readonly" />
+    <input type="button" value="Calc" onclick="calc()" />
+
+    <script>
+        function calc() {
+            // Get the input field values and convert them to numbers
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+
+            // Check if the input values are valid numbers
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById("sum").value = "Invalid input";
+            } else {
+                // Calculate the sum
+                var sum = num1 + num2;
+                document.getElementById("sum").value = sum;
+            }
+        }
+    </script>
+</body>
+</html>
